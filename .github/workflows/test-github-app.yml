@@ -40,7 +40,10 @@ jobs:
 
     - name: Run python file
       run: python test.py --swagger $SWAGGER_URL
-
+      
+    - name: Run powershell file
+      run: python test.ps1 --Param1 $SWAGGER_URL
+      
     - name: Change a file
       run: |
         echo hello2 > test.txt
