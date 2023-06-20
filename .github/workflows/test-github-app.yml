@@ -38,6 +38,9 @@ jobs:
         echo API_VERSION $API_VERSION
         echo TEST $TEST
 
+    - name: Run python file
+      run: python ./test.py --swagger $SWAGGER_URL
+
     - name: Change a file
       run: |
         echo hello2 > test.txt
