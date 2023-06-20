@@ -3,34 +3,40 @@ name: test-github-app
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      API_VERSION:
+        description: 'The API version. Default value is 1'
+        required: false
+        type: string
+        default: '1'
 
 jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - name: Checkout repository client project
-      uses: actions/checkout@v3
-      with:
-        repository: jason-chan-lf/lf-api-client-core-dotnet
+#     - name: Checkout repository client project
+#       uses: actions/checkout@v3
+#       with:
+#         repository: jason-chan-lf/lf-api-client-core-dotnet
         
     - name: Update 
       run: |
         echo hello > test.txt
 
-    - uses: tibdex/github-app-token@v1
-      id: generate-token
-      with:
-        app_id: ${{ secrets.APP_ID }}
-        private_key: ${{ secrets.APP_PRIVATE_KEY }}
+#     - uses: tibdex/github-app-token@v1
+#       id: generate-token
+#       with:
+#         app_id: ${{ secrets.APP_ID }}
+#         private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4.2.3
-      with:
-        token: ${{ steps.generate-token.outputs.token }}
-        branch: my-test-branch
-        delete-branch: true
-        title: "Created a PR"
-        commit-message: "Created a PR"
-        body: "Created a PR"
-        assignees: ${{ github.actor }}
+#     - name: Create Pull Request
+#       uses: peter-evans/create-pull-request@v4.2.3
+#       with:
+#         token: ${{ steps.generate-token.outputs.token }}
+#         branch: my-test-branch
+#         delete-branch: true
+#         title: "Created a PR"
+#         commit-message: "Created a PR"
+#         body: "Created a PR"
+#         assignees: ${{ github.actor }}
