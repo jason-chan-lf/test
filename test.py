@@ -5,4 +5,4 @@ if __name__ == '__main__':
     parser.add_argument('--swagger')
 
     args = parser.parse_args()
-    print (args.swagger)
+    print ("This is the swagger argument: " + args.swagger + ".")
