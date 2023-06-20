@@ -1,5 +1,5 @@
 param(
-  [int]$Param1 = "test string"
+  [string]$Param1 = "test string"
 )
 $ErrorActionPreference = "Stop"
 
