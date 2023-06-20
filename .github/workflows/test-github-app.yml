@@ -45,19 +45,19 @@ jobs:
       run: |
         echo hello2 > test.txt
 
-    - uses: tibdex/github-app-token@v1
-      id: generate-token
-      with:
-        app_id: ${{ secrets.APP_ID }}
-        private_key: ${{ secrets.APP_PRIVATE_KEY }}
+#     - uses: tibdex/github-app-token@v1
+#       id: generate-token
+#       with:
+#         app_id: ${{ secrets.APP_ID }}
+#         private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4.2.3
-      with:
-        token: ${{ steps.generate-token.outputs.token }}
-        branch: my-test-branch
-        delete-branch: true
-        title: "Created a PR"
-        commit-message: "Created a PR"
-        body: "Created a PR with version ${{ env.API_VERSION }}"
-        assignees: ${{ github.actor }}
+#     - name: Create Pull Request
+#       uses: peter-evans/create-pull-request@v4.2.3
+#       with:
+#         token: ${{ steps.generate-token.outputs.token }}
+#         branch: my-test-branch
+#         delete-branch: true
+#         title: "Created a PR"
+#         commit-message: "Created a PR"
+#         body: "Created a PR with version ${{ env.API_VERSION }}"
+#         assignees: ${{ github.actor }}
