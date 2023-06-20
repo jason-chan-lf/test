@@ -30,6 +30,11 @@ jobs:
         # Extract the api version from the swagger url
         echo API_VERSION=`echo $SWAGGER_URL | grep -Po '/v.*?/' | tr -d '/'` >> $GITHUB_ENV
 
+    - name: Print environment variables
+      run: |
+        echo SWAGGER_URL $SWAGGER_URL
+        echo API_VERSION $API_VERSION
+
 #     - uses: tibdex/github-app-token@v1
 #       id: generate-token
 #       with:
