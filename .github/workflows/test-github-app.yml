@@ -10,6 +10,9 @@ on:
         type: string
         default: 'https://api.laserfiche.com/repository/swagger/v1/swagger.json'
 
+env:
+  SWAGGER_URL: 'https://api.laserfiche.com/repository/swagger/v1/swagger.json'
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
     - name: Setup environment variables
       run: |
         # Make the swagger url an environment variable secret
-        SWAGGER_URL_INPUT=$(jq -r '.inputs.SWAGGER_URL' $GITHUB_EVENT_PATH)
+        SWAGGER_URL_INPUT=$(jq -r '.env.SWAGGER_URL' $GITHUB_EVENT_PATH)
         echo ::add-mask::$SWAGGER_URL_INPUT
         echo SWAGGER_URL="$SWAGGER_URL_INPUT" >> $GITHUB_ENV
 
