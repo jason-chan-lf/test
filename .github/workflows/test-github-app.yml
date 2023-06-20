@@ -22,7 +22,7 @@ jobs:
         
     - name: Update 
       run: |
-        echo ${{ inputs.API_VERSION }} > test.txt
+        echo "::add-mask::${{ inputs.API_VERSION }}" > test.txt
 
 #     - uses: tibdex/github-app-token@v1
 #       id: generate-token
