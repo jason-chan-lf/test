@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout repository client project
       uses: actions/checkout@v3
+      with:
+        repository: jason-chan-lf/lf-api-client-core-dotnet
         
     - name: Setup environment variables
       run: |
@@ -38,30 +40,21 @@ jobs:
 
     - name: Change a file
       run: |
-        echo hello > test.txt
+        echo hello2 > test.txt
+
+    - uses: tibdex/github-app-token@v1
+      id: generate-token
+      with:
+        app_id: ${{ secrets.APP_ID }}
+        private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4.2.3
       with:
+        token: ${{ steps.generate-token.outputs.token }}
         branch: my-test-branch
         delete-branch: true
-        title: "Automated update for generating the $API_VERSION client by action ${{ github.run_id }}"
+        title: "Created a PR"
         commit-message: "Created a PR"
-        body: "Created a PR"
-
-#     - uses: tibdex/github-app-token@v1
-#       id: generate-token
-#       with:
-#         app_id: ${{ secrets.APP_ID }}
-#         private_key: ${{ secrets.APP_PRIVATE_KEY }}
-
-#     - name: Create Pull Request
-#       uses: peter-evans/create-pull-request@v4.2.3
-#       with:
-#         token: ${{ steps.generate-token.outputs.token }}
-#         branch: my-test-branch
-#         delete-branch: true
-#         title: "Created a PR"
-#         commit-message: "Created a PR"
-#         body: "Created a PR"
-#         assignees: ${{ github.actor }}
+        body: "Created a PR with version $API_VERSION"
+        assignees: ${{ github.actor }}
