@@ -39,7 +39,7 @@ jobs:
         echo TEST $TEST
 
     - name: Run python file
-      run: python ./test.py --swagger $SWAGGER_URL
+      run: python test.py --swagger $SWAGGER_URL
 
     - name: Change a file
       run: |
