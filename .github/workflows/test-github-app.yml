@@ -22,10 +22,9 @@ jobs:
         
     - name: Update 
       run: |
-        echo "::add-mask::${{ inputs.API_VERSION }}"
-        echo ${{ inputs.API_VERSION }} > test.txt
-        echo "::add-mask::Mona The Octocat"
-        echo "Mona The Octocat" > test2.txt
+        MY_SECRET=${{ inputs.API_VERSION }}
+        echo "::add-mask::$MY_SECRET"
+        echo $MY_SECRET > test.txt
 
 #     - uses: tibdex/github-app-token@v1
 #       id: generate-token
