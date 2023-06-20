@@ -28,8 +28,8 @@ jobs:
         echo SWAGGER_URL="$SWAGGER_URL_INPUT" >> $GITHUB_ENV
 
         # Extract the api version from the swagger url
-        x=`echo $SWAGGER_URL | grep -Po '/v.*?/' | tr -d '/'`
-        echo API_VERSION="`echo $SWAGGER_URL | grep -Po '/v.*?/' | tr -d '/'`" >> $GITHUB_ENV
+        x=`echo $SWAGGER_URL_INPUT | grep -Po '/v.*?/' | tr -d '/'`
+        echo API_VERSION="`echo $SWAGGER_URL_INPUT | grep -Po '/v.*?/' | tr -d '/'`" >> $GITHUB_ENV
         echo TEST="$x" >> $GITHUB_ENV
 
     - name: Print environment variables
