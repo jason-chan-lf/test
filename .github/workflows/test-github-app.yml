@@ -4,11 +4,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      API_VERSION:
-        description: 'The API version. Default value is 1'
+      SWAGGER_URL:
+        description: 'The url to download the swagger schema.'
         required: true
         type: string
-        default: '1'
+        default: 'https://api.laserfiche.com/repository/swagger/v1/swagger.json'
 
 jobs:
   test:
@@ -20,11 +20,15 @@ jobs:
 #       with:
 #         repository: jason-chan-lf/lf-api-client-core-dotnet
         
-    - name: Update 
+    - name: Setup environment variables
       run: |
-        MY_SECRET=$(jq -r '.inputs.API_VERSION' $GITHUB_EVENT_PATH)
-        echo "::add-mask::$MY_SECRET"
-        echo $MY_SECRET
+        # Make the swagger url an environment variable secret
+        SWAGGER_URL_INPUT=$(jq -r '.inputs.SWAGGER_URL' $GITHUB_EVENT_PATH)
+        echo ::add-mask::$SWAGGER_URL_INPUT
+        echo SWAGGER_URL="$SWAGGER_URL_INPUT" >> $GITHUB_ENV
+
+        # Extract the api version from the swagger url
+        echo API_VERSION=`echo $SWAGGER_URL | grep -Po '/v.*?/' | tr -d '/'` >> $GITHUB_ENV
 
 #     - uses: tibdex/github-app-token@v1
 #       id: generate-token
