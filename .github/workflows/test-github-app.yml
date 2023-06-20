@@ -56,5 +56,5 @@ jobs:
         delete-branch: true
         title: "Created a PR"
         commit-message: "Created a PR"
-        body: "Created a PR with version $API_VERSION"
+        body: "Created a PR with version ${{ env.API_VERSION }}"
         assignees: ${{ github.actor }}
