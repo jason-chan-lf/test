@@ -17,8 +17,8 @@ jobs:
     steps:
     - name: Checkout repository client project
       uses: actions/checkout@v3
-      with:
-        repository: jason-chan-lf/lf-api-client-core-dotnet
+#       with:
+#         repository: jason-chan-lf/lf-api-client-core-dotnet
         
     - name: Setup environment variables
       run: |
