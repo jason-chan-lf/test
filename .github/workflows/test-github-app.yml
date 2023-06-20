@@ -6,7 +6,7 @@ on:
     inputs:
       API_VERSION:
         description: 'The API version. Default value is 1'
-        required: false
+        required: true
         type: string
         default: '1'
 
