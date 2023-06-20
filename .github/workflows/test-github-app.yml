@@ -22,7 +22,7 @@ jobs:
         
     - name: Update 
       run: |
-        echo hello > test.txt
+        echo ${{ inputs.API_VERSION }} > test.txt
 
 #     - uses: tibdex/github-app-token@v1
 #       id: generate-token
