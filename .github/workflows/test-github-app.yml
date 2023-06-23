@@ -20,17 +20,17 @@ jobs:
 #       with:
 #         repository: jason-chan-lf/lf-api-client-core-dotnet
         
-    - name: Setup environment variables
-       run: |
+#     - name: Setup environment variables
+#       run: |
 #         # Make the swagger url an environment variable secret
 #         SWAGGER_URL_INPUT=$(jq -r '.inputs.SWAGGER_URL' $GITHUB_EVENT_PATH)
 #         echo ::add-mask::$SWAGGER_URL_INPUT
 #         echo SWAGGER_URL="$SWAGGER_URL_INPUT" >> $GITHUB_ENV
 
-        # Extract the api version from the swagger url
-        x=`echo $SWAGGER_URL_INPUT | grep -Po '/v.*?/' | tr -d '/'`
-        echo API_VERSION="`echo $SWAGGER_URL_INPUT | grep -Po '/v.*?/' | tr -d '/'`" >> $GITHUB_ENV
-        echo TEST="$x" >> $GITHUB_ENV
+#         # Extract the api version from the swagger url
+#         x=`echo $SWAGGER_URL_INPUT | grep -Po '/v.*?/' | tr -d '/'`
+#         echo API_VERSION="`echo $SWAGGER_URL_INPUT | grep -Po '/v.*?/' | tr -d '/'`" >> $GITHUB_ENV
+#         echo TEST="$x" >> $GITHUB_ENV
 
 #     - name: Print environment variables
 #       run: |
