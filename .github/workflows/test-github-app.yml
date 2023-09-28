@@ -21,8 +21,9 @@ jobs:
       - name: Set DOCUMENTATION_VERSION environment variable
         run: |
           npm_version='${{ env.NPM_VERSION }}'
-          echo 'DOCUMENTATION_VERSION=${npm_version%%.*}.x' >> $GITHUB_ENV
-          
+          documentation_version=${npm_version%%.*}.x
+          echo DOCUMENTATION_VERSION='$documentation_version' >> $GITHUB_ENV
+
       - name: Echo environment variable
         run: echo 'The doc version is ${{ env.DOCUMENTATION_VERSION }}.'
     
