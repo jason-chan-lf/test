@@ -10,13 +10,24 @@ on:
         type: string
         default: 'https://api.laserfiche.com/repository/swagger/v1/swagger.json'
 
+env:
+  NPM_VERSION: '1.0.0'
+
 jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - name: Checkout repository client project
-      uses: actions/checkout@v3
+      - name: Set DOCUMENTATION_VERSION environment variable
+        run: |
+          npm_version='${{ env.NPM_VERSION }}'
+          echo 'DOCUMENTATION_VERSION=${npm_version%%.*}.x' >> $GITHUB_ENV
+          
+      - name: Echo environment variable
+        run: echo 'The doc version is ${{ env.DOCUMENTATION_VERSION }}.'
+    
+    # - name: Checkout repository client project
+    #   uses: actions/checkout@v3
 #       with:
 #         repository: jason-chan-lf/lf-api-client-core-dotnet
         
@@ -38,8 +49,8 @@ jobs:
 #         echo API_VERSION $API_VERSION
 #         echo TEST $TEST
 
-    - name: Run python file
-      run: python test.py --swagger ${{ inputs.SWAGGER_URL }}
+    # - name: Run python file
+    #   run: python test.py --swagger ${{ inputs.SWAGGER_URL }}
       
 #     - name: Run powershell file
 #       run: pwsh test.ps1 --Param1 $SWAGGER_URL
