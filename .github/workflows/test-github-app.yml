@@ -24,7 +24,7 @@ jobs:
           documentation_version=${npm_version%%.*}.x
           echo $npm_version
           echo $documentation_version
-          echo 'DOCUMENTATION_VERSION=$documentation_version' >> $GITHUB_ENV
+          echo DOCUMENTATION_VERSION=$documentation_version >> $GITHUB_ENV
 
       - name: Echo environment variable
         run: |
