@@ -21,11 +21,15 @@ jobs:
       - name: Set DOCUMENTATION_VERSION environment variable
         run: |
           npm_version='${{ env.NPM_VERSION }}'
-          documentation_version=${npm_version%%.*}.x
+          documentation_version='${npm_version%%.*}.x'
+          echo npm_version
+          echo documentation_version
           echo DOCUMENTATION_VERSION='$documentation_version' >> $GITHUB_ENV
 
       - name: Echo environment variable
-        run: echo 'The doc version is ${{ env.DOCUMENTATION_VERSION }}.'
+        run: |
+          echo 'The doc version is ${{ env.DOCUMENTATION_VERSION }}.'
+          echo 'The doc version is $DOCUMENTATION_VERSION.'
     
     # - name: Checkout repository client project
     #   uses: actions/checkout@v3
