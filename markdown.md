@@ -5,14 +5,42 @@
 ##### Heading 5
 ###### Heading 6
 
-This is a paragraph with **bold text**, *italic text*, and ~~strikethrough~~.
+This is a paragraph with **bold text**, *italic text*, ***bolded italic text***, and ~~strikethrough~~.
+
+Emoji :joy:
 
 Here is some `inline code` and another `variable_name` in a sentence.
 
 > This is a blockquote.
 > It can span multiple lines.
 >
-> > And it can be nested.
+>> And it can be nested.
+> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+>  *Everything* is going according to **plan**.
+
+---
+
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+[^1]: This is the first footnote.
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.
+
+---
+
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
 
 ---
 
