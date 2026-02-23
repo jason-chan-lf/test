@@ -1,3 +1,18 @@
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
 # Heading 1
 ## Heading 2
 ### Heading 3
@@ -35,6 +50,10 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
     `{ my code }`
 
     Add as many paragraphs as you like.
+
+The algorithm was first described by Smith[^3]. Later work by Jones confirmed the results. Smith's original paper[^3] remains the definitive reference.
+
+[^3]: Smith, J. (2020). "On the efficiency of algorithms." *Journal of Computing*, 42(3), 100-115.
 
 ---
 
