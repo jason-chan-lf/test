@@ -61,6 +61,11 @@ The algorithm was first described by Smith[^3]. Later work by Jones confirmed th
 - [ ] Update the website
 - [ ] Contact the media
 
+Other
+- [ ] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+
 ---
 
 | Feature | Status | Priority |
@@ -70,15 +75,82 @@ The algorithm was first described by Smith[^3]. Later work by Jones confirmed th
 | Math | Missing | High |
 | Footnotes | Missing | Medium |
 
-- Unordered item 1
-- Unordered item 2
-- Nested item A
-- Nested item B
-- Unordered item 3
+| Task           | Time required | Assigned to   | Current Status | Finished | 
+|----------------|---------------|---------------|----------------|-----------|
+| Calendar Cache | > 5 hours  |  | in progress | - [x] ok?
+| Object Cache   | > 5 hours  |  | in progress | [x] item1<br/>[ ] item2
+| Object Cache   | > 5 hours  |  | in progress | <ul><li>- [x] item1</li><li>- [ ] item2</li></ul>
+| Object Cache   | > 5 hours  |  | in progress | <ul><li>[x] item1</li><li>[ ] item2</li></ul>
 
-1. Ordered item 1
-2. Ordered item 2
-3. Ordered item 3
+- [x] works
+- [x] works too
+
+List
+- First item
+- Second item
+- Third item
+- Fourth item
+
+List
+* First item
+* Second item
+* Third item
+* Fourth item
+
+List
++ First item
++ Second item
++ Third item
++ Fourth item
+
+List
+- First item
+- Second item
+- Third item
+    - Indented item
+    - Indented item
+      - Indented item
+        - Indented item
+          - Indented item
+            - Indented item
+- Fourth item
+
+
+List
+- First item
+    - Indented item
+- Second item
+
+List
+1. First item
+2. Second item
+3. Third item
+4. Fourth item
+
+List
+1. First item
+1. Second item
+1. Third item
+1. Fourth item
+
+List
+1. First item
+8. Second item
+3. Third item
+5. Fourth item
+
+List
+1. First item
+2. Second item
+3. Third item
+    1. Indented item
+    2. Indented item
+    2. Indented item
+    2. Indented item
+        1. Indented item
+        1. Indented item
+            1. Indented item
+4. Fourth item
 
 Inline math: $E = mc^2$
 
