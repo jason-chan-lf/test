@@ -68,6 +68,16 @@ Other
 
 ---
 
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
+---
+
 | Feature | Status | Priority |
 |---------|--------|----------|
 | Headings | Broken | High |
