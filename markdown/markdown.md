@@ -13,6 +13,8 @@
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
+This is a <sup>superscript</sup> text
+
 # Heading 1
 ## Heading 2
 ### Heading 3
